@@ -2,12 +2,17 @@ var express = require('express');
 var app = express();
 var fs = require("fs");
 var mysql      = require('mysql');
+var cfg_data = JSON.parse('./cfg.json');
+var db_host = cfg_data.host;
+var db_user = cfg_data.user;
+var db_pass = cfg_data.password;
+var db_name = cfg_data.name;
 var pool = mysql.createPool({
   connectionLimit : '6',
-  host            : 'localhost',
-  user            : 'client',
-  password        : 'k2KV1FfkoOGa',
-  database        : 'rideshare_db'
+  host            : db_host,
+  user            : db_user,
+  password        : db_password,
+  database        : db_name
 });
 
 app.get('/user/:u_id', function (req, res) {

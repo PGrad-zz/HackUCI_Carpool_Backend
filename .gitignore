@@ -1,3 +1,5 @@
-db_cfg.txt
+cfg.json
 graph_test/
 node-server/node_modules/
+index.js
+db_cfg.txt
